@@ -1,12 +1,10 @@
-# Sanskrit-to-English-Translator
-
 # 🧠 Sanskrit-to-English Translation Web Application
 
 An AI-powered web application that translates Sanskrit text into English using Natural Language Processing (NLP) techniques. Built with Flask, this project aims to bridge ancient language understanding with modern AI tools.
 
 ---
 
-## 🌟 Features
+# 🌟 Features
 
 - 🔤 Translates Sanskrit text to English with high accuracy.
 - 🧠 Built using NLP and machine learning models.
@@ -16,16 +14,23 @@ An AI-powered web application that translates Sanskrit text into English using N
 
 ---
 
-## 🚀 Tech Stack
+# 🚀 Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript (Bootstrap)
 - **Backend**: Python, Flask
 
 ---
 
-## 📦 Installation
+# 📦 Installation
 
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/Sayali-2004/Sanskrit-to-English-Translator.git
    cd Sanskrit-to-English-Translator
+2. **Install dependencies**
+   pip install -r requirements.txt
+   
+4. **Run the App**
+   python app.py
+
+   
