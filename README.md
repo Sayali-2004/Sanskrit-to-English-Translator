@@ -28,9 +28,17 @@ An AI-powered web application that translates Sanskrit text into English using N
    git clone https://github.com/Sayali-2004/Sanskrit-to-English-Translator.git
    cd Sanskrit-to-English-Translator
 2. **Install dependencies**
+   ```bash
    pip install -r requirements.txt
    
 4. **Run the App**
+   ```bash
    python app.py
+   
+---
+
+# 🎓 Research Context
+This project is part of an academic research initiative, also published and presented under the title: "Unveiling the Bhagavad Gita: AI-Powered Sanskrit Translation and Interactive Insights"
+Published in IEEE Conference NOLDA, accepted at ICCSAI 2025.
 
    
