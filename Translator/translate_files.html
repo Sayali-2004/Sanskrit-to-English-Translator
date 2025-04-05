@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate Document - BhagavadAI</title>
+    <style>
+        body {
+            background-color: #2e6a6a;
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: white;
+            border-radius: 30px;
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 13px 20px;
+            opacity: 0;
+            animation: fadeInLeft 1s forwards;
+            animation-delay: 0.3s;
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+
+        .navbar li a:hover {
+            color: red;
+        }
+
+        .footer {
+            background-color: #1f4a4a;
+            color: white;
+            text-align: center;
+            padding: 7px;
+            font-size: 16px;
+            border-radius: 15px;
+            margin-top: 80px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            animation-delay: 1.5s;
+        }
+
+        .footer a {
+            color: #a0d9d9;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .chatbot-icon {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            width: 60px;
+            height: 60px;
+            background-image: url('https://t3.ftcdn.net/jpg/05/83/74/28/360_F_583742881_HNQwJVxhKDQ7M5LOdBQIYOGDHTOhfZva.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            cursor: pointer;
+            animation: bounce 2s ease-in-out infinite, rotateIcon 4s linear infinite;
+        }
+
+        .intro h2 {
+            text-align: center;
+            color: white;
+            font-size: 45px;
+            margin-top: 50px;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .file-upload-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            animation-delay: 1s;
+        }
+
+        .file-upload-container input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .file-upload-container button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .file-upload-container button:hover {
+            background-color: #45a049;
+        }
+
+        .translation-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding: 0 20px;
+            animation: slideIn 1.5s ease-out forwards;
+            animation-delay: 1.2s;
+        }
+
+        .sanskrit-container,
+        .english-container {
+            width: 48%;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            animation-delay: 1.5s;
+        }
+
+        .sanskrit-container textarea,
+        .english-container textarea {
+            width: 100%;
+            padding: 15px;
+            height: 200px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            color: black;
+        }
+
+        .translation-container button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .translation-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes rotateIcon {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="intro">
+        <h2>Welcome to the BhagavadAI Document Translator!</h2>
+    </div>
+
+    <!-- File Upload Section -->
+    <div class="file-upload-container">
+        <input type="file" id="fileInput" accept=".pdf, .pptx" />
+        <button onclick="uploadFile()">Upload and Translate</button>
+    </div>
+
+    <!-- Translation Containers -->
+    <div class="translation-container">
+        <!-- Sanskrit Text Container (Extracted from Document) -->
+        <div class="sanskrit-container">
+            <h3>Document Text</h3>
+            <textarea id="documentText" placeholder="Uploaded document text will appear here..." readonly></textarea>
+        </div>
+
+        <!-- English Text Container -->
+        <div class="english-container">
+            <h3>English Translation</h3>
+            <textarea id="englishText" placeholder="Translated English text will appear here..." readonly></textarea>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 BhagavadAI Translator | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <!-- Chatbot icon -->
+    <div class="chatbot-icon"></div>
+
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please upload a PDF or PPTX file.');
+                return;
+            }
+
+            // Placeholder for the text extraction logic
+            extractTextFromFile(file)
+                .then(text => {
+                    document.getElementById('documentText').value = text;
+                    // Placeholder: Send extracted text for translation (replace with your API logic)
+                    translateText(text);
+                })
+                .catch(error => {
+                    alert('Error while processing the file: ' + error);
+                });
+        }
+
+        async function extractTextFromFile(file) {
+            // This function needs to extract text from PDF or PPTX files
+            // You will need to use libraries like `pdf.js` or server-side processing for this.
+
+            // For now, this is just a placeholder.
+            if (file.name.endsWith('.pdf')) {
+                // Placeholder for PDF text extraction logic
+                return 'Extracted text from PDF (this is a placeholder).';
+            } else if (file.name.endsWith('.pptx')) {
+                // Placeholder for PPTX text extraction logic
+                return 'Extracted text from PPTX (this is a placeholder).';
+            } else {
+                throw new Error('Unsupported file type');
+            }
+        }
+
+        function translateText(text) {
+            // Placeholder for translating the extracted text.
+            // Call your translation API or model here to get the translated text
+            var translatedText = "This is a placeholder for the translated text.";
+            document.getElementById('englishText').value = translatedText;
+        }
+    </script>
+
+</body>
+
+</html>

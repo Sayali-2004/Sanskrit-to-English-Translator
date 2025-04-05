@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Bhagavad Gita Translator</title>
+    <style>
+        body {
+            background-color: #2e6a6a;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .intro {
+            text-align: center;
+            margin-top: 5px;
+            color: white;
+            animation: slideIn 2s ease-out;
+        }
+
+        .intro h2 {
+            font-size: 45px;
+        }
+
+        .intro p {
+            font-size: 20px;
+        }
+
+        .container {
+            background-image: url('https://i.pinimg.com/originals/54/89/b2/5489b268119503427f9e11461e8d9139.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 500px 66px 10px 78px;
+            margin: 30px 34px 34px 34px;
+            border-radius: 30px;
+            width: 700px;
+            float: right;
+            display: block;
+        }
+
+        .navbar {
+            background-color: white;
+            border-radius: 30px;
+            animation: navbarAnimation 1.5s ease-in-out;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 13px 20px;
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+
+        .navbar li a:hover {
+            color: red;
+        }
+
+        .navbar input {
+            border: 2px solid rgb(27, 6, 68);
+            border-radius: 20px;
+            padding: 3px 10px;
+            width: 130px;
+        }
+
+        .about-content {
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background-color: #1f4a4a;
+            color: white;
+            text-align: center;
+            padding: 7px;
+            font-size: 16px;
+            border-radius: 15px;
+            margin-top: 70px;
+            animation: footerAnimation 1.5s ease-in-out;
+        }
+
+        .footer a {
+            color: #a0d9d9;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes navbarAnimation {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes footerAnimation {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-content">
+        <h2>About BhagavadAI Translator</h2>
+        <p>Welcome to the BhagavadAI Translator, a project designed to bridge the gap between ancient Sanskrit and modern English. Our goal is to provide an advanced, user-friendly platform that allows you to translate verses from the Bhagavad Gita with ease, making the teachings of this sacred text more accessible to everyone.</p>
+        <p>This platform uses cutting-edge AI technology to generate translations and insights from Sanskrit to simple English, with a focus on accuracy, readability, and preserving the spiritual essence of the original text.</p>
+        <p>Whether you are a student, a scholar, or simply someone seeking to learn more about the Bhagavad Gita, BhagavadAI Translator is here to guide you on your journey of discovery.</p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 BhagavadAI Translator | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+
+</html>

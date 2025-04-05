@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate Text - BhagavadAI</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="intro">
+        <h2>Welcome to the BhagavadAI Translator!</h2>
+    </div>
+
+    <div class="translation-container">
+        <div class="sanskrit-container">
+            <h3>Sanskrit Text</h3>
+            <textarea id="sanskritText" placeholder="Enter Sanskrit text here..."></textarea>
+        </div>
+
+        <div class="english-container">
+            <h3>English Translation</h3>
+            <textarea id="englishText" placeholder="Translated English text will appear here..." readonly></textarea>
+        </div>
+    </div>
+
+    <div class="translation-container">
+        <button onclick="translateText()">Translate</button>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 BhagavadAI Translator | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <script>
+        function translateText() {
+            const sanskritText = document.getElementById('sanskritText').value;
+
+            // Ensure that the Sanskrit text is not empty
+            if (!sanskritText.trim()) {
+                alert("Please enter some Sanskrit text.");
+                return;
+            }
+
+            fetch('http://127.0.0.1:5000/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ sanskritText: sanskritText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('englishText').value = data.translatedText;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("An error occurred while translating.");
+            });
+        }
+    </script>
+</body>
+</html>

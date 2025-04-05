@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - BhagavadAI Translator</title>
+    <style>
+        .intro {
+            text-align: center;
+            margin-top: 5px;
+            color: white;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        body {
+            background-color: #2e6a6a;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: white;
+            border-radius: 30px;
+            animation: navbarAnimation 1.5s ease-in-out;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 13px 20px;
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+
+        .navbar li a:hover {
+            color: red;
+        }
+
+        .navbar input {
+            border: 2px solid rgb(27, 6, 68);
+            border-radius: 20px;
+            padding: 3px 10px;
+            width: 130px;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 30px 20px 20px; /* Extra padding at the top to prevent content from being hidden behind navbar */
+        }
+
+        .intro h2 {
+            font-size: 45px;
+            color: #f0f8ff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 50px 20px;
+            margin-top: 5px;
+            animation: slideInUp 1.5s ease-in-out;
+        }
+
+        .service-box {
+            background-color: #1f4a4a;
+            border: 1px solid #b0c4de;
+            border-radius: 20px;
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+            background-color: #184a4a;
+        }
+
+        .service-box img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .service-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #a0d9d9;
+        }
+
+        .service-box p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background-color: #1f4a4a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 15px;
+            margin-top: 50px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .footer a {
+            color: #a0d9d9;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes navbarAnimation {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="intro">
+        <h2>Our Services</h2>
+        <p>Explore our advanced tools to help you uncover the meaning of the Bhagavad Gita's teachings in simple English.</p>
+    </div>
+
+    <div class="services-container">
+        <!-- Translate Text Service -->
+        <div class="service-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/2939/2939884.png" alt="Translate Text Icon">
+            <h3>Translate Text</h3>
+            <p>Convert individual verses or specific sections from Sanskrit to English with ease. Perfect for quick translations and deep dives into single passages.</p>
+        </div>
+
+        <!-- Translate Files Service -->
+        <div class="service-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/2353/2353477.png" alt="Translate Files Icon">
+            <h3>Translate Files</h3>
+            <p>Upload .pdf, .docx, or .pptx files to translate entire documents. Great for students, researchers, and scholars looking to translate and analyze texts in bulk.</p>
+        </div>
+
+        <!-- BhagavadAI Service -->
+        <div class="service-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="BhagavadAI Icon">
+            <h3>BhagavadAI</h3>
+            <p>Experience AI-powered insights, including contextual meanings, interpretations, and summaries to enhance your understanding of the Bhagavad Gita’s wisdom.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 BhagavadAI Translator | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+
+</html>

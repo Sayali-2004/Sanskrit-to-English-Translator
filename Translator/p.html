@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhagavad Gita Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #2e6a6a;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .intro {
+            text-align: center;
+            margin-top: 5px;
+            color: white;
+            animation: fadeInUp 1.5s ease-out, bounceInUp 1s ease-out; /* Added bounce animation */
+        }
+
+        .intro h2 {
+            font-size: 45px;
+            animation: bounceIn 2s ease-out, slideInUp 1s ease-out; /* Bounce and slide-in effect */
+        }
+
+        .intro p {
+            font-size: 20px;
+            animation: fadeInUp 1.5s ease-out, fadeIn 2s ease-out; /* Smooth fade-in */
+        }
+
+        .container {
+            background-image: url('https://i.pinimg.com/originals/54/89/b2/5489b268119503427f9e11461e8d9139.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 400px 66px 10px 78px;
+            margin: 30px 10px 34px 34px;
+            border-radius: 30px;
+            width: 700px;
+            float: right;
+            display: block;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .navbar {
+            background-color: white;
+            border-radius: 30px;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .navbar ul {
+            overflow: auto;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 13px 20px;
+            position: relative;
+            animation: bounceIn 1s ease-out;
+        }
+
+        .navbar li:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .navbar li:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .navbar li:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .navbar li:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar li a:hover {
+            color: red;
+            transform: scale(1.1);
+        }
+
+        .navbar input {
+            border: 2px solid rgb(27, 6, 68);
+            border-radius: 20px;
+            padding: 3px 10px;
+            width: 130px;
+        }
+
+        .box-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 150px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .box {
+            background-color: #f0f8ff;
+            border: 1px solid #b0c4de;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            color: black;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+            background-color: #e0f7fa;
+        }
+
+        .additional-info {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            margin-top: 20px;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .footer {
+            background-color: #1f4a4a;
+            color: white;
+            text-align: center;
+            padding: 7px;
+            font-size: 16px;
+            border-radius: 15px;
+            margin-top: 250px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .footer a {
+            color: #a0d9d9;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .chatbot-icon {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            width: 60px;
+            height: 60px;
+            background-image: url('https://t3.ftcdn.net/jpg/05/83/74/28/360_F_583742881_HNQwJVxhKDQ7M5LOdBQIYOGDHTOhfZva.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            cursor: pointer;
+            animation: pulse 2s infinite, bounceIn 1.5s ease-out;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounceInUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateY(-10px);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design for tablets and smaller devices */
+        @media (max-width: 992px) {
+            .container {
+                width: 100%;
+                margin: 20px auto;
+                padding: 300px 20px;
+            }
+
+            .intro h2 {
+                font-size: 35px;
+            }
+
+            .intro p {
+                font-size: 18px;
+            }
+
+            .box-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .box {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        /* Responsive design for mobile devices */
+        @media (max-width: 576px) {
+            .navbar ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar li {
+                float: none;
+                margin: 10px 0;
+            }
+
+            .intro h2 {
+                font-size: 28px;
+            }
+
+            .intro p {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 200px 15px;
+                margin: 20px auto;
+            }
+
+            .box-container {
+                margin-top: 50px;
+            }
+
+            .footer {
+                margin-top: 100px;
+            }
+
+            .chatbot-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="intro">
+        <h2>Welcome to BhagavadAI Translator</h2>
+        <p>Your reliable source for accurate Bhagavad Gita translations powered by AI</p>
+    </div>
+    <div class="container">
+        <div class="box-container">
+            <div class="box">
+                <h3>Verse Translation</h3>
+                <p>Get accurate translations for specific verses of Bhagavad Gita.</p>
+            </div>
+            <div class="box">
+                <h3>Full Text Translation</h3>
+                <p>Access complete translations of Bhagavad Gita for deeper understanding.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="additional-info">
+        <p>We offer translations for verses and full texts. Try our services and get meaningful translations today!</p>
+    </div>
+
+    <div class="footer">
+        <p>For more information, contact us at: <a href="mailto:support@bhagavadai.com">support@bhagavadai.com</a></p>
+    </div>
+
+    <div class="chatbot-icon" onclick="openChatbot()"></div>
+
+    <script>
+        function openChatbot() {
+            alert("Opening chatbot...");
+            // Add your chatbot integration logic here
+        }
+    </script>
+</body>
+
+</html>

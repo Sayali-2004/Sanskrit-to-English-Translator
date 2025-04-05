@@ -1,0 +1,235 @@
+body {
+    background-color: #2e6a6a;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Navbar Animation */
+.navbar {
+    background-color: white;
+    border-radius: 30px;
+    animation: slideIn 1s ease-out forwards;
+}
+
+.navbar ul {
+    overflow: auto;
+}
+
+.navbar li {
+    float: left;
+    list-style: none;
+    margin: 13px 20px;
+    opacity: 0;
+    animation: fadeInLeft 1s forwards;
+    animation-delay: 0.3s;
+}
+
+.navbar li a {
+    padding: 3px 3px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.navbar li a:hover {
+    color: red;
+    transition: color 0.3s ease;
+}
+
+.navbar input {
+    border: 2px solid rgb(27, 6, 68);
+    border-radius: 20px;
+    padding: 3px 10px;
+    width: 130px;
+}
+
+/* Footer Animation */
+.footer {
+    background-color: #1f4a4a;
+    color: white;
+    text-align: center;
+    padding: 7px;
+    font-size: 16px;
+    border-radius: 15px;
+    margin-top: 80px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+.footer a {
+    color: #a0d9d9;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Chatbot icon animation */
+.chatbot-icon {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 60px;
+    height: 60px;
+    background-image: url('https://t3.ftcdn.net/jpg/05/83/74/28/360_F_583742881_HNQwJVxhKDQ7M5LOdBQIYOGDHTOhfZva.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: bounce 2s ease-in-out infinite, rotateIcon 4s linear infinite;
+}
+
+.intro h2 {
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    margin-top: 50px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Container for translation */
+.translation-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 0 20px;
+    animation: slideIn 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Sanskrit Text Container */
+.sanskrit-container,
+.english-container {
+    width: 48%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+/* Sanskrit Text Input */
+.sanskrit-container textarea {
+    width: 100%;
+    padding: 15px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* English Text Output */
+.english-container textarea {
+    width: 100%;
+    padding: 15px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+.sanskrit-container textarea:hover,
+.english-container textarea:hover {
+    transform: scale(1.05);
+    background-color: #e3f2fd;
+}
+
+/* Button Styling */
+.translation-container button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.translation-container button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,215 @@
+body {
+    background-color: #2e6a6a;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 1.5s ease-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: white;
+    border-radius: 30px;
+    animation: slideInDown 1s ease-out;
+}
+
+.navbar ul {
+    overflow: auto;
+}
+
+.navbar li {
+    float: left;
+    list-style: none;
+    margin: 13px 20px;
+}
+
+.navbar li a {
+    padding: 3px 3px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.navbar li a:hover {
+    color: red;
+}
+
+.navbar input {
+    border: 2px solid rgb(27, 6, 68);
+    border-radius: 20px;
+    padding: 3px 10px;
+    width: 130px;
+}
+
+.footer {
+    background-color: #1f4a4a;
+    color: white;
+    text-align: center;
+    padding: 7px;
+    font-size: 16px;
+    border-radius: 15px;
+    margin-top: 80px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.footer a {
+    color: #a0d9d9;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.chatbot-icon {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 60px;
+    height: 60px;
+    background-image: url('https://t3.ftcdn.net/jpg/05/83/74/28/360_F_583742881_HNQwJVxhKDQ7M5LOdBQIYOGDHTOhfZva.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: pulse 2s infinite, bounceIn 1s ease-out;
+}
+
+.intro h2 {
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    margin-top: 50px;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Container for AI-powered edits */
+.edit-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 0 20px;
+    animation: slideInUp 1s ease-out;
+}
+
+/* Text Container */
+.text-container {
+    width: 48%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    animation: fadeInLeft 1s ease-out;
+}
+
+/* Input Text Area */
+.text-container textarea {
+    width: 100%;
+    padding: 15px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* Button Styling */
+.edit-container button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    animation: fadeInUp 2s ease-out;
+}
+
+.edit-container button:hover {
+    background-color: #45a049;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

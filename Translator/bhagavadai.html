@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Edits - BhagavadAI</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        
+    </style>
+    
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- H2 Heading Added -->
+    <div class="intro">
+        <h2>Welcome to the BhagavadAI AI-Powered text!</h2>
+    </div>
+
+    <!-- AI-powered edits containers -->
+    <div class="edit-container">
+        <!-- Input Text Container -->
+        <div class="text-container">
+            <h3>Original Text</h3>
+            <textarea id="originalText" placeholder="Enter your text here..."></textarea>
+        </div>
+
+        <!-- Edited Text Container -->
+        <div class="text-container">
+            <h3>AI-Powered Translation</h3>
+            <textarea id="editedText" placeholder="AI-edited text will appear here..." readonly></textarea>
+        </div>
+    </div>
+
+    <!-- Edit Button -->
+    <div class="edit-container">
+        <button onclick="applyEdits()">Apply AI Edits</button>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 BhagavadAI Translator | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <!-- Chatbot icon -->
+    <div class="chatbot-icon"></div>
+
+    <script>
+        function applyEdits() {
+            var originalText = document.getElementById('originalText').value;
+
+            // Here you can add logic to call an API or use a model for AI-powered editing.
+            // For now, this is just a placeholder for the edited text.
+            var editedText = "This is a placeholder for AI-edited text based on the input.";
+
+            document.getElementById('editedText').value = editedText;
+        }
+    </script>
+
+</body>
+
+</html>

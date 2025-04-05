@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Bhagavad Gita Translator</title>
+    <style>
+        body {
+            background-color: #2e6a6a;
+            animation: fadeInBody 1.5s ease-in-out;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .intro {
+            text-align: center;
+            margin-top: 5px;
+            color: white;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .intro h2 {
+            font-size: 45px;
+        }
+
+        .intro p {
+            font-size: 20px;
+        }
+
+        .container {
+            background-image: url('https://i.pinimg.com/originals/54/89/b2/5489b268119503427f9e11461e8d9139.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 500px 66px 10px 78px;
+            margin: 30px 34px 34px 34px;
+            border-radius: 30px;
+            width: 700px;
+            float: right;
+            display: block;
+        }
+
+        .navbar {
+            background-color: white;
+            border-radius: 30px;
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 13px 20px;
+            opacity: 0;
+            animation: fadeInLeft 1s forwards;
+            animation-delay: 0.3s;
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+
+        .navbar li a:hover {
+            color: red;
+        }
+
+        .navbar input {
+            border: 2px solid rgb(27, 6, 68);
+            border-radius: 20px;
+            padding: 3px 10px;
+            width: 130px;
+        }
+
+        .contact-content {
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            animation-delay: 0.7s;
+        }
+
+        .contact-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-in-out forwards;
+            animation-delay: 1s;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            animation-delay: 1.2s;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #1f4a4a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            animation-delay: 1.5s;
+        }
+
+        .contact-form button:hover {
+            background-color: #a0d9d9;
+        }
+
+        .footer {
+            background-color: #1f4a4a;
+            color: white;
+            text-align: center;
+            padding: 7px;
+            font-size: 16px;
+            border-radius: 15px;
+            margin-top: 70px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            animation-delay: 2s;
+        }
+
+        .footer a {
+            color: #a0d9d9;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .success-message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInBody {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contact-content">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or suggestions, feel free to reach out to us using the form below. We'd love to hear from you!</p>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message">
+            Your message has been successfully sent!
+        </div>
+
+        <div class="contact-form">
+            <form id="contactForm" onsubmit="return handleSubmit(event)">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 BhagavadAI Translator | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <script>
+        // JavaScript function to handle form submission and show success message
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form from refreshing the page
+
+            // Display the success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Clear the form fields
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+
+</body>
+
+</html>
